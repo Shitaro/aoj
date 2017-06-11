@@ -1,4 +1,5 @@
 -- X Cubic
-main = do
-  n <- readLn
-  putStrLn . show $ n^3
+main = readLn >>= print . cubic
+
+cubic :: Int -> Int
+cubic n = n^3
