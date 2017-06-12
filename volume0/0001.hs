@@ -1,7 +1,6 @@
 -- List of Top 3 Hills
 import Control.Monad  -- replicateM
 import Data.Ord       -- sortBy (comparing Down)
-import Data.List      -- intercalate
 
 main =
   replicateM 10 getLine >>= putStr . unlines . map show . solve
