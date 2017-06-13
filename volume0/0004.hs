@@ -4,7 +4,7 @@ import Text.Printf -- printf
 main = getContents >>= putStr . solve
 
 solve :: String -> String
-solve = unlines . map (unwords . map (floatFormat . roundZero) . simul . map read) . map words . lines
+solve = unlines . map (unwords . map (floatFormat . roundZero) . simul . map read . words) . lines
 
 roundZero :: Float -> Float
 roundZero x | x == 0.0 = 0

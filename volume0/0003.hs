@@ -6,7 +6,7 @@ import Control.Applicative -- <$>, <*>
 main = (solve <$> getLine) <*> getContents >>= putStr
 
 solve :: String -> String -> String
-solve _ = unlines . map (isRight . sortBy (comparing Down) . map read) . map words . lines
+solve _ = unlines . map (isRight . sortBy (comparing Down) . map read . words) . lines
 
 isRight :: [Int] -> String
 isRight [a,b,c] | a^2 == b^2 + c^2 = "YES"

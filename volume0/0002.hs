@@ -1,5 +1,5 @@
 -- Digit Number
-main = getContents >>= putStr . unlines . map show . solve
+main = getContents >>= putStr . solve
 
-solve :: String -> [Int]
-solve = map (length . show . sum . map read) . map words . lines
+solve :: String -> String
+solve = unlines . map (show . length . show . sum . map read) . map words . lines
