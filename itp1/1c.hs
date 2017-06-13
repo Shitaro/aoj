@@ -1,6 +1,8 @@
 -- Rectangle
-import Control.Applicative
+main = getLine >>= putStrLn . solve
 
-main = do
-  [a,b] <- (map read . words) <$> getLine :: IO [Int]
-  putStrLn . unwords $ map show [a*b, 2*(a+b)]
+solve :: String -> String
+solve = unwords . map show . areaAndCircumLen . map read . words
+
+areaAndCircumLen :: [Int] -> [Int]
+areaAndCircumLen = \[a,b] -> [a*b, 2*(a+b)]

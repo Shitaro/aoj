@@ -1,10 +1,13 @@
 -- Watch
-import Data.List
+import Data.List -- intercalate
 
-main = readLn >>= putStrLn . intercalate ":" . map show . solve
+main = readLn >>= putStrLn . solve
 
-solve :: Int -> [Int]
-solve n = [h,m,s]
+solve :: Int -> String
+solve = intercalate ":" . map show . watch
+
+watch :: Int -> [Int]
+watch n = [h,m,s]
   where
     h = div n 3600
     m = mod (div n 60) 60
