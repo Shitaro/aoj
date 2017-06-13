@@ -7,7 +7,7 @@ solve :: Int -> String
 solve = intercalate ":" . map show . watch
 
 watch :: Int -> [Int]
-watch n = [h,m,s]
+watch = n -> [h,m,s]
   where
     h = div n 3600
     m = mod (div n 60) 60
