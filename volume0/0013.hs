@@ -1,7 +1,7 @@
 -- Switching Railroad Cars
 import Control.Monad.State
 
-type Stack a = StateT [a] IO a
+type Stack a = StateT [Int] IO a
 
 main = getContents >>= solve
 
@@ -23,7 +23,7 @@ push x = do
   put (x:xs)
   return x
 
-switchRailroad :: [Int] -> StateT [Int] IO ()
+switchRailroad :: [Int] -> Stack ()
 switchRailroad [] = return ()
 switchRailroad (x:xs)
   | x == 0 = do n <- pop
