@@ -3,10 +3,10 @@ import Control.Monad
 import Data.List.Split
 
 main :: IO ()
-main = do
-  w <- readLn
-  n <- readLn
-  ss <- replicateM n getLine
+main =
+  readLn >>= \w ->
+  readLn >>= \n ->
+  replicateM n getLine >>= \ss ->
   putStr $ solve ss w
 
 solve :: [String] -> Int -> String
