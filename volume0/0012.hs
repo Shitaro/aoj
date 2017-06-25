@@ -1,9 +1,8 @@
 -- A Point in a Triangle
 main = getContents >>= putStr . solve
---
+
 solve :: String -> String
 solve = unlines . map (isIn . toTuples . map read . words) . lines
-
 
 cross :: (Float, Float) -> (Float, Float) -> Float
 cross a b = (fst a) * (snd b) - (snd a) * (fst b)
